@@ -19,6 +19,13 @@ function peldaFuggveny2(bemeneti: string) {
 
 console.log(peldaFuggveny2("Zolika"));
 
+//Arrow functions
+const getFullName = (name: string, surname: string): string => {
+  return `${name} ${surname}`;
+};
+
+console.log(getFullName("Kun-Fagyal", "Zoltán"));
+
 ///////////////////////////////UNION TYPE////////////////////////////////////
 
 //a változó típusa lehet string is és number is

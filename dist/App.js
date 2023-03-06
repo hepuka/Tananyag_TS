@@ -14,6 +14,11 @@ function peldaFuggveny2(bemeneti) {
     return bemeneti.length;
 }
 console.log(peldaFuggveny2("Zolika"));
+//Arrow functions
+const getFullName = (name, surname) => {
+    return `${name} ${surname}`;
+};
+console.log(getFullName("Kun-Fagyal", "Zoltán"));
 ///////////////////////////////UNION TYPE////////////////////////////////////
 //a változó típusa lehet string is és number is
 let valtozo = "Hello";
