@@ -31,7 +31,7 @@ function peldaFuggveny3(bemeneti) {
     }
     //kizárásos alapon az else ágban már csak number típus lehet
 }
-//LITERAL TÍPUS
+/////////////////////////LITERAL TÍPUS////////////////////////
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
 let ertek3 = 42;
 console.log(ertek3);
@@ -66,7 +66,7 @@ szemely2[1]; //visszaadja az 1.indexen lévő értéket
 //TUPLE-t használata distucturing révén érdemes használni
 const [nev, eletkor] = szemely2;
 console.log(nev, eletkor);
-//OBJEKTUM
+//////////////////////////////////OBJEKTUM///////////////////////////////
 //TYPE INFERENCE révén nem kell típusokat megadni, automatikusan felismeri
 let album = {
     id: 1,
@@ -78,3 +78,13 @@ let album2 = {
     name: "Halihó",
     title: "Bla Bla",
 };
+const user = {
+    name: "Zoltan",
+    age: 46,
+    getMessage() {
+        return `Hello ${this.name}`;
+    },
+};
+console.log(user);
+console.log(user.name);
+console.log(user.getMessage());

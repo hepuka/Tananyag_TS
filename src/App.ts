@@ -43,13 +43,15 @@ function peldaFuggveny3(bemeneti: string | number) {
   //kizárásos alapon az else ágban már csak number típus lehet
 }
 
-//LITERAL TÍPUS
+/////////////////////////LITERAL TÍPUS////////////////////////
+
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
 let ertek3: 1 | 42 | 3.2 = 42;
 
 console.log(ertek3);
 
-//TYPE ALIAS
+/////////////////////////////TYPE ALIAS////////////////////////
+
 //type kulcsó után megadjuk a címkét majd a halmaz definícióját
 
 type Szamok = 1 | 42 | 3.2;
@@ -109,7 +111,7 @@ const [nev, eletkor] = szemely2;
 
 console.log(nev, eletkor);
 
-//OBJEKTUM
+//////////////////////////////////OBJEKTUM///////////////////////////////
 
 //TYPE INFERENCE révén nem kell típusokat megadni, automatikusan felismeri
 let album = {
@@ -135,7 +137,8 @@ let album2: Album = {
   title: "Bla Bla",
 };
 
-//INTERFACE
+//////////////////////////////////INTERFACE///////////////////////////
+
 //Ha egy objektum struktúráját egy általános referenciaként határozommeg mint a TYPE ALIAS-nál, akkor e helyett interface-t is használhatunk.
 interface Album2 {
   id: number;
@@ -163,3 +166,25 @@ type Album3 = {
   title: string;
   photos?: Array<Photo>;
 };
+
+//2.példa
+interface User {
+  name: string;
+  age: number;
+  address?: string;
+  getMessage(): string;
+}
+
+const user: User = {
+  name: "Zoltan",
+  age: 46,
+  getMessage() {
+    return `Hello ${this.name}`;
+  },
+};
+
+console.log(user);
+
+console.log(user.name);
+
+console.log(user.getMessage());
