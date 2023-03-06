@@ -43,6 +43,15 @@ function peldaFuggveny3(bemeneti: string | number) {
   //kizárásos alapon az else ágban már csak number típus lehet
 }
 
+//2.példa
+interface User2Interface {
+  name: string;
+  surname: string;
+}
+
+//kezdetben null értéket adunk a változónak, majd később adjuk hozzá az interface-ben meghatározottakat
+let user2: User2Interface | null = null;
+
 /////////////////////////LITERAL TÍPUS////////////////////////
 
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
@@ -63,6 +72,7 @@ function pelda(bemenet: Szamok): Szamok {
   return 42;
 }
 
+//2.példa
 //létrehozunk egy status típust ami ezt a 3 értékre van deiniálva
 type Status = "Elkezdve" | "Folyamatban" | "Befizetve";
 
@@ -73,7 +83,19 @@ progress = "Elkezdve";
 progress = "Folyamatban";
 progress = "Befizetve";
 
-//ARRAY
+//3.példa
+type PopularTag = string;
+//eredetileg a PopularTag egy string, de a használatkor megadható string tömbnek is
+const popularTags: PopularTag[] = ["dragon", "coffee"];
+console.log(popularTags);
+
+////////////////////////UNION and ALIAS///////////////////////
+//4.példa
+
+type MaybepopularTag = PopularTag | null;
+const dragonsTag: MaybepopularTag = "dragon;";
+
+/////////////////////////////ARRAY///////////////////////////
 
 //ez esetben bármilyen típusú lehet a tömb
 let szamok = [];
@@ -168,14 +190,14 @@ type Album3 = {
 };
 
 //2.példa
-interface User {
+interface UserInterface {
   name: string;
   age: number;
   address?: string;
   getMessage(): string;
 }
 
-const user: User = {
+const user: UserInterface = {
   name: "Zoltan",
   age: 46,
   getMessage() {
@@ -188,3 +210,54 @@ console.log(user);
 console.log(user.name);
 
 console.log(user.getMessage());
+
+/////////////////////////////////CLASSES////////////////////////////////////
+
+class User {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  getFullName(): string {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+let user3 = new User("Hepuka", "Kun-Fagyal");
+console.log(user3.getFullName());
+
+//////////////////////////////VOID,ANY,UNKNOWN//////////////////////////////
+
+//VOID amikor nem térünk vissza semmivel egy függvényből. pl.csak console.log-ot használunk a függvény törzsében
+
+const doSomething = (): void => {
+  console.log("doSomething");
+};
+
+//ANY típusnál bármi lehet a változó típusa, nem ajánlott mivel atípus ebben nem definálható
+let foo: any = 2;
+foo = "str";
+
+////////////////////////UNKNOWN,TYPE ASSERTION/////////////////////
+//Typescipt3-ban volt bevezetve
+
+let pageNumber: any = "1";
+let numericPageNumber: number = pageNumber as number;
+console.log(typeof numericPageNumber); //string típust ad visza, utánanézni miért??? miért nincs string to number konverzió
+
+///////////////////////////DOM in TYPESCRIPT////////////////////////
+
+//as HTMLInputElement meg kell adni mert csak ezzel tudjuk használni az elemre a metódusokat pl. a value
+const someElement = document.querySelector(".foo") as HTMLInputElement;
+//console.log(someElement.value);
+
+//eseménykezőben is használni kell as HTMLInputElement-et, hogy az elem metódusait használni tudjuk
+/* someElement.addEventListener("blur", (event) => {
+  const target = event.target as HTMLInputElement;
+  console.log(target.value);
+});
+ */

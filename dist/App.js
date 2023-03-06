@@ -31,6 +31,8 @@ function peldaFuggveny3(bemeneti) {
     }
     //kizárásos alapon az else ágban már csak number típus lehet
 }
+//kezdetben null értéket adunk a változónak, majd később adjuk hozzá az interface-ben meghatározottakat
+let user2 = null;
 /////////////////////////LITERAL TÍPUS////////////////////////
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
 let ertek3 = 42;
@@ -45,7 +47,11 @@ let progress;
 progress = "Elkezdve";
 progress = "Folyamatban";
 progress = "Befizetve";
-//ARRAY
+//eredetileg a PopularTag egy string, de a használatkor megadható string tömbnek is
+const popularTags = ["dragon", "coffee"];
+console.log(popularTags);
+const dragonsTag = "dragon;";
+/////////////////////////////ARRAY///////////////////////////
 //ez esetben bármilyen típusú lehet a tömb
 let szamok = [];
 //ez esetben csak number típusú értékeket tartalmazhat a tömb
@@ -88,3 +94,38 @@ const user = {
 console.log(user);
 console.log(user.name);
 console.log(user.getMessage());
+/////////////////////////////////CLASSES////////////////////////////////////
+class User {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+let user3 = new User("Hepuka", "Kun-Fagyal");
+console.log(user3.getFullName());
+//////////////////////////////VOID,ANY,UNKNOWN//////////////////////////////
+//VOID amikor nem térünk vissza semmivel egy függvényből. pl.csak console.log-ot használunk a függvény törzsében
+const doSomething = () => {
+    console.log("doSomething");
+};
+//ANY típusnál bármi lehet a változó típusa, nem ajánlott mivel atípus ebben nem definálható
+let foo = 2;
+foo = "str";
+////////////////////////UNKNOWN,TYPE ASSERTION/////////////////////
+//Typescipt3-ban volt bevezetve
+let pageNumber = "1";
+let numericPageNumber = pageNumber;
+console.log(typeof numericPageNumber); //string típust ad visza, utánanézni miért??? miért nincs string to number konverzió
+///////////////////////////DOM in TYPESCRIPT////////////////////////
+//as HTMLInputElement meg kell adni mert csak ezzel tudjuk használni az elemre a metódusokat pl. a value
+const someElement = document.querySelector(".foo");
+//console.log(someElement.value);
+//eseménykezőben is használni kell as HTMLInputElement-et, hogy az elem metódusait használni tudjuk
+/* someElement.addEventListener("blur", (event) => {
+  const target = event.target as HTMLInputElement;
+  console.log(target.value);
+});
+ */
