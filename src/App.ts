@@ -215,12 +215,22 @@ console.log(user.getMessage());
 
 class User {
   firstName: string;
+  // private firstName: string;
   lastName: string;
+  readonly unchangableName: string;
+  static readonly maxAge = 50;
 
   constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
+    this.unchangableName = firstName;
   }
+
+  //nem változtatható meg a változó értéke mert readonly
+
+  /*   changeUnchangableName(): void {
+    this.unchangableName = "foo";
+  } */
 
   getFullName(): string {
     return `${this.firstName} ${this.lastName}`;
@@ -229,6 +239,80 @@ class User {
 
 let user3 = new User("Hepuka", "Kun-Fagyal");
 console.log(user3.getFullName());
+//console.log(user3.firstName); itt már nem lesz látható a firstname mert az osztályban private a láthatósága
+
+//console.log(user.maxAge); itt már nem látható mert static
+console.log(User.maxAge); //itt látható mert az osztálynévre hívtam meg és nem a példányosított objektumra (static)
+
+////////////////////////////INHERITANCE////////////////////////
+
+class Admin extends User {
+  private editor: string = "Editor: Hepuka";
+
+  setEditor(editor: string): void {
+    this.editor = editor;
+  }
+
+  getEditor(): string {
+    return this.editor;
+  }
+}
+
+const admin = new Admin("adminFirst", "AdminSurname");
+
+console.log(admin);
+console.log(admin.getFullName());
+
+//csak az Admin osztály példányai férnek hozzá, a User-é nem
+console.log(admin.getEditor());
+
+//////////////////////////////GENERICS////////////////////
+
+//T a default neve a generic-nek
+//minden generic adattípust <>-be kell rakni
+const addId = <T extends object>(obj: T) => {
+  const id = Math.random().toString(16); //hexa számot ad vissza
+  return {
+    ...obj,
+    id,
+  };
+};
+
+//data bármilyen adattípus lehet
+//a lenti példányban egyszer objektum a másiknál string tömb
+interface UserInterface3<T, V> {
+  name: string;
+  age: number;
+  data: T;
+  meta: V;
+}
+
+const user4: UserInterface3<{ meta: string }, string> = {
+  name: "Jack",
+  age: 45,
+  data: {
+    meta: "foo",
+  },
+  meta: "bar",
+};
+
+const user5: UserInterface3<string[], string> = {
+  name: "John",
+  age: 20,
+  data: ["foo", "bar", "baz"],
+  meta: "Debrecen",
+};
+
+const result = addId<UserInterface3<{}, string>>(user4);
+
+console.log(result);
+
+//////////////////PUBLIC,PRIVATE,PROTECTED, READONLY////////////
+
+//PUBLIC alapértelmezett
+//PRIVATE - csak az osztályon belül használható
+//PROTECTED - csak az osztályban látható és az örökölt osztályokban
+//READONLY -   használhatjuk arra, hogy ha egy változót const-ként akarunk használni az osztályban
 
 //////////////////////////////VOID,ANY,UNKNOWN//////////////////////////////
 

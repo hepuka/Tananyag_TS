@@ -99,13 +99,68 @@ class User {
     constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.unchangableName = firstName;
     }
+    //nem változtatható meg a változó értéke mert readonly
+    /*   changeUnchangableName(): void {
+      this.unchangableName = "foo";
+    } */
     getFullName() {
         return `${this.firstName} ${this.lastName}`;
     }
 }
+User.maxAge = 50;
 let user3 = new User("Hepuka", "Kun-Fagyal");
 console.log(user3.getFullName());
+//console.log(user3.firstName); itt már nem lesz látható a firstname mert az osztályban private a láthatósága
+//console.log(user.maxAge); itt már nem látható mert static
+console.log(User.maxAge); //itt látható mert az osztálynévre hívtam meg és nem a példányosított objektumra (static)
+////////////////////////////INHERITANCE////////////////////////
+class Admin extends User {
+    constructor() {
+        super(...arguments);
+        this.editor = "Editor: Hepuka";
+    }
+    setEditor(editor) {
+        this.editor = editor;
+    }
+    getEditor() {
+        return this.editor;
+    }
+}
+const admin = new Admin("adminFirst", "AdminSurname");
+console.log(admin);
+console.log(admin.getFullName());
+//csak az Admin osztály példányai férnek hozzá, a User-é nem
+console.log(admin.getEditor());
+//////////////////////////////GENERICS////////////////////
+//T a default neve a generic-nek
+//minden generic adattípust <>-be kell rakni
+const addId = (obj) => {
+    const id = Math.random().toString(16); //hexa számot ad vissza
+    return Object.assign(Object.assign({}, obj), { id });
+};
+const user4 = {
+    name: "Jack",
+    age: 45,
+    data: {
+        meta: "foo",
+    },
+    meta: "bar",
+};
+const user5 = {
+    name: "John",
+    age: 20,
+    data: ["foo", "bar", "baz"],
+    meta: "Debrecen",
+};
+const result = addId(user4);
+console.log(result);
+//////////////////PUBLIC,PRIVATE,PROTECTED, READONLY////////////
+//PUBLIC alapértelmezett
+//PRIVATE - csak az osztályon belül használható
+//PROTECTED - csak az osztályban látható és az örökölt osztályokban
+//READONLY -   használhatjuk arra, hogy ha egy változót const-ként akarunk használni az osztályban
 //////////////////////////////VOID,ANY,UNKNOWN//////////////////////////////
 //VOID amikor nem térünk vissza semmivel egy függvényből. pl.csak console.log-ot használunk a függvény törzsében
 const doSomething = () => {
