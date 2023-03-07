@@ -12,6 +12,20 @@ let ertek2 = Math.random();
 
 let regex: RegExp = /\w+/g;
 
+//////////////////////////////////NEVER//////////////////////////////
+const createError = (errMsg: string) => {
+  throw new Error(errMsg);
+};
+
+const infinite = () => {
+  let i: number = 1;
+  while (true) {
+    i++;
+
+    if (i > 10) break;
+  }
+};
+
 ////////////////////////UNKNOWN,TYPE ASSERTION/////////////////////
 //Typescipt3-ban volt bevezetve
 

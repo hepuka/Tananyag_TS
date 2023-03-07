@@ -9,6 +9,18 @@ let ertek = "teszt";
 let ertek2 = Math.random();
 //ertek2="Béla"; ez is hibára fut mert a Math.random értéke number
 let regex = /\w+/g;
+//////////////////////////////////NEVER//////////////////////////////
+const createError = (errMsg) => {
+    throw new Error(errMsg);
+};
+const infinite = () => {
+    let i = 1;
+    while (true) {
+        i++;
+        if (i > 10)
+            break;
+    }
+};
 ////////////////////////UNKNOWN,TYPE ASSERTION/////////////////////
 //Typescipt3-ban volt bevezetve
 let pageNumber = "1";
