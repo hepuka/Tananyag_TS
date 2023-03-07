@@ -1,4 +1,4 @@
-//Ha egy objektum struktúráját egy általános referenciaként határozommeg mint a TYPE ALIAS-nál, akkor e helyett interface-t is használhatunk.
+//Ha egy objektum struktúráját egy általános referenciaként határozom meg mint a TYPE ALIAS-nál, akkor e helyett interface-t is használhatunk.
 interface Album2 {
   id: number;
   name: string;

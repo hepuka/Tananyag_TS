@@ -10,26 +10,7 @@ let ertek = "teszt";
 let ertek2 = Math.random();
 //ertek2="Béla"; ez is hibára fut mert a Math.random értéke number
 
-////////////////////////////////FUNCTIONS//////////////////////////////////
-
-//Bemenetnek meghatároztuk,hogy az csak string típusú lehet és a kiment csak number típusú
-function peldaFuggveny(bemeneti: string): number {
-  return 2;
-}
-
-//ez esetben nem kell kimeneti típust megadni, mert a length alapból numberrel tér vissza
-function peldaFuggveny2(bemeneti: string) {
-  return bemeneti.length;
-}
-
-console.log(peldaFuggveny2("Zolika"));
-
-//Arrow functions
-const getFullName = (name: string, surname: string): string => {
-  return `${name} ${surname}`;
-};
-
-console.log(getFullName("Kun-Fagyal", "Zoltán"));
+let regex: RegExp = /\w+/g;
 
 ////////////////////////UNKNOWN,TYPE ASSERTION/////////////////////
 //Typescipt3-ban volt bevezetve

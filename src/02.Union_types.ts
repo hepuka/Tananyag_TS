@@ -3,6 +3,10 @@ let valtozo: string | number = "Hello";
 
 //valtozo:true; hibára fut
 
+//tömbök deklarálása unióval
+let stringArray: string[];
+let mixedArray: (string | number | boolean)[];
+
 function peldaFuggveny3(bemeneti: string | number) {
   //Narrowing
   //hogyha a bemenet string csak akkor akkor működik a length
@@ -26,5 +30,7 @@ let user2: User2Interface | null = null;
 
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
 let ertek3: 1 | 42 | 3.2 = 42;
-
 console.log(ertek3);
+
+let texts: "one" | "two" | "three";
+texts = "three";

@@ -2,6 +2,9 @@
 //a változó típusa lehet string is és number is
 let valtozo = "Hello";
 //valtozo:true; hibára fut
+//tömbök deklarálása unióval
+let stringArray;
+let mixedArray;
 function peldaFuggveny3(bemeneti) {
     //Narrowing
     //hogyha a bemenet string csak akkor akkor működik a length
@@ -16,3 +19,5 @@ let user2 = null;
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
 let ertek3 = 42;
 console.log(ertek3);
+let texts;
+texts = "three";
