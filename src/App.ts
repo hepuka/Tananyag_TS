@@ -1,4 +1,5 @@
 //////////////////////////Type Inference//////////////////
+
 let ertek = "teszt";
 //ertek = 2; hibát dob, mert eredetileg string a típusa a változónak
 
