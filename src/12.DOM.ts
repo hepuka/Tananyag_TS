@@ -9,3 +9,9 @@ const someElement = document.querySelector(".foo") as HTMLInputElement;
   const target = event.target as HTMLInputElement;
   console.log(target.value);
 }); */
+
+const img = document.querySelector("img") as HTMLImageElement;
+const myImg = document.getElementById("img") as HTMLImageElement;
+
+//img.src;
+//myImg.src;
