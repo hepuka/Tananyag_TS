@@ -171,7 +171,7 @@ const usersArray = [
 console.log(getUserProperty(usersArray, "email"));
 console.log(getUserProperty(usersArray, "username"));
 
-///////////////////////////////////////
+/////////////////////////////////////////////GENERIC IN CLASS/////////////////////////////////////////////////
 
 class StateObject<T> {
   private data: T;

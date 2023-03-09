@@ -123,7 +123,7 @@ const usersArray = [
 ];
 console.log(getUserProperty(usersArray, "email"));
 console.log(getUserProperty(usersArray, "username"));
-///////////////////////////////////////
+/////////////////////////////////////////////GENERIC IN CLASS/////////////////////////////////////////////////
 class StateObject {
     constructor(value) {
         this.data = value;
