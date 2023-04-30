@@ -13,6 +13,7 @@ let mixedArr = ["EVH", 1984, true];
 let szamok = [];
 //így is megadhatjuk
 let szamok2 = [];
+szamok2.push(23);
 //szamok2.push("hello"); hibára fut, mert a tömb csak számokat tartalmazhat
 //ez esetben már nem kell a típust megadni a TYPE INFERENCE miatt
 let szamok3 = [15, 12, 34];

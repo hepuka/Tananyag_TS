@@ -20,11 +20,13 @@ const createError = (errMsg: string) => {
 const infinite = () => {
   let i: number = 1;
   while (true) {
+    console.log(i);
     i++;
 
     if (i > 10) break;
   }
 };
+infinite();
 
 ////////////////////////UNKNOWN,TYPE ASSERTION/////////////////////
 //Typescipt3-ban volt bevezetve

@@ -12,9 +12,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function getAlbums() {
     return __awaiter(this, void 0, void 0, function* () {
         const fetchedAlbums = yield fetch("http://jsonplaceholder.typicode.com/albums").then((res) => {
-            return res.json();
+            return res.json(); //típuspontosítás, hogy milyen típusú adatot is várunk a fetch-ben. A TS compiler fordítási időben nem tudhatja, hogy milyen adat fog majd jönni szerver oldalról amikor a kérés kimegy.
         });
-        const albums = fetchedAlbums.slice(0, 5);
+        const albums = fetchedAlbums.slice(0, 5); //csak az első 5 albumot kérdezzük le
         const promisesOfAllPhotos = albums.map((item) => fetch("http://jsonplaceholder.typicode.com/photos?albumId=" + item.id).then((res) => res.json()));
         const allPhotos = yield Promise.all(promisesOfAllPhotos);
         return albums.map((item, index) => (Object.assign(Object.assign({}, item), { photos: allPhotos[index] })));
@@ -43,7 +43,8 @@ function render(albumok) {
         <h3>#${item.id}</h3>
         <h3>#${item.title}</h3>
         <br />
-        ${(_a = item.photos) === null || _a === void 0 ? void 0 : _a.map((photo) => `
+        ${(_a = item.photos //photos? egy optional chaining, ha a kulcs nem létezik akkor egy undefined-el tér vissza és nem egy hibaüzenettel a consolban
+            ) === null || _a === void 0 ? void 0 : _a.map((photo) => `
         <img src="${photo.thumbnailUrl}"
         style="display: inline-block;margin-right: 6px;width:30px; height:30px"
         />

@@ -15,6 +15,7 @@ let szamok: Array<number> = [];
 
 //így is megadhatjuk
 let szamok2: number[] = [];
+szamok2.push(23);
 
 //szamok2.push("hello"); hibára fut, mert a tömb csak számokat tartalmazhat
 

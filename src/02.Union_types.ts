@@ -1,20 +1,23 @@
 //a változó típusa lehet string is és number is
 let valtozo: string | number = "Hello";
 
-//valtozo:true; hibára fut
+valtozo = 15; //mivel a deklarációban 2 típust adtunk meg, a string értéket módosíthatjuk number értékre
+
+//valtozo:true; itt hibára fut mert vagy string vagy number lehet az érték.
 
 //tömbök deklarálása unióval
 let stringArray: string[];
 let mixedArray: (string | number | boolean)[];
 
-function peldaFuggveny3(bemeneti: string | number) {
+//függvények definiálásánál is használható
+function peldaFuggveny3(bemenet: string | number) {
   //Narrowing
-  //hogyha a bemenet string csak akkor akkor működik a length
-  if (typeof bemeneti === "string") {
-    return bemeneti.length;
+  //akkor működik a length hogyha a bemenet string, ezt külön meg kell határozni
+  if (typeof bemenet === "string") {
+    return bemenet.length;
+  } else {
+    //kizárásos alapon az else ágban már csak number típus lehet a bemenet
   }
-
-  //kizárásos alapon az else ágban már csak number típus lehet
 }
 
 //2.példa

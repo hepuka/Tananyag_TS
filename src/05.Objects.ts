@@ -11,7 +11,6 @@ let album = {
 //csak felépítésre figyel, az objektum property-ei csak a megadott típusú értékeket vehetik fel
 
 //TYPE ALIAS használata:
-
 type Album = {
   id: number;
   name: string;

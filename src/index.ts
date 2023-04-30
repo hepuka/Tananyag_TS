@@ -18,10 +18,10 @@ async function getAlbums() {
   const fetchedAlbums = await fetch(
     "http://jsonplaceholder.typicode.com/albums"
   ).then((res) => {
-    return res.json() as Promise<Album4[]>;
+    return res.json() as Promise<Album4[]>; //típuspontosítás, hogy milyen típusú adatot is várunk a fetch-ben. A TS compiler fordítási időben nem tudhatja, hogy milyen adat fog majd jönni szerver oldalról amikor a kérés kimegy.
   });
 
-  const albums = fetchedAlbums.slice(0, 5);
+  const albums = fetchedAlbums.slice(0, 5); //csak az első 5 albumot kérdezzük le
 
   const promisesOfAllPhotos = albums.map((item) =>
     fetch("http://jsonplaceholder.typicode.com/photos?albumId=" + item.id).then(
@@ -30,7 +30,6 @@ async function getAlbums() {
   );
 
   const allPhotos = await Promise.all(promisesOfAllPhotos);
-
   return albums.map((item, index) => ({ ...item, photos: allPhotos[index] }));
 }
 
@@ -56,7 +55,7 @@ function render(albumok: Array<Album4>) {
         <h3>#${item.id}</h3>
         <h3>#${item.title}</h3>
         <br />
-        ${item.photos
+        ${item.photos //photos? egy optional chaining, ha a kulcs nem létezik akkor egy undefined-el tér vissza és nem egy hibaüzenettel a consolban
           ?.map(
             (photo) => `
         <img src="${photo.thumbnailUrl}"

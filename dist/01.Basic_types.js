@@ -16,11 +16,13 @@ const createError = (errMsg) => {
 const infinite = () => {
     let i = 1;
     while (true) {
+        console.log(i);
         i++;
         if (i > 10)
             break;
     }
 };
+infinite();
 ////////////////////////UNKNOWN,TYPE ASSERTION/////////////////////
 //Typescipt3-ban volt bevezetve
 let pageNumber = "1";
