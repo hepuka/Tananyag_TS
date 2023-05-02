@@ -10,12 +10,42 @@ function peldaFuggveny2(bemeneti: string) {
 
 console.log(peldaFuggveny2("Zolika"));
 
-//Arrow functions
-const getFullName = (name: string, surname: string): string => {
-  return `${name} ${surname}`;
-};
+// Parameter type annotation
+function greet(name: string) {
+  console.log("Hello, " + name.toUpperCase() + "!!");
+}
 
+greet("Zolika");
+
+//Return Type Annotations
+function getFavoriteNumber(): number {
+  return 260;
+}
+console.log(getFavoriteNumber());
+
+// No type annotations here, but TypeScript can spot the bug
+const names = ["Alice", "Bob", "Eve"];
+
+// Contextual typing for function
+names.forEach(function (s) {
+  console.log(s.toUpperCase());
+});
+
+////////////////////////////Arrow functions////////////////////////
+const getFullName = (
+  name: string,
+  surname: string,
+  isPaid: boolean = false //default value declaration
+): string => {
+  return `${name} ${surname}: ${isPaid ? "paid" : "unpaid"}`;
+};
+console.log(getFullName("Kun-Fagyal", "Zoltán", true));
 console.log(getFullName("Kun-Fagyal", "Zoltán"));
+
+let getValue = (val: number): boolean | string => {
+  return val > 5 ? true : "200 ok";
+};
+console.log(getValue(2));
 
 //////////////////////////////TYPE ALIAS használatával///////////////////////
 type mathFunction = (a: number, b: number) => number;

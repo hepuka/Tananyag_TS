@@ -49,7 +49,7 @@ console.log(user.name);
 
 console.log(user.getMessage());
 
-///////////////////////////////////INTERFACE használata CLASS-ban//////////////////////////////////
+/////////INTERFACE használata CLASS-ban////////////////
 
 interface Musician {
   name: string;

@@ -8,11 +8,33 @@ function peldaFuggveny2(bemeneti) {
     return bemeneti.length;
 }
 console.log(peldaFuggveny2("Zolika"));
-//Arrow functions
-const getFullName = (name, surname) => {
-    return `${name} ${surname}`;
+// Parameter type annotation
+function greet(name) {
+    console.log("Hello, " + name.toUpperCase() + "!!");
+}
+greet("Zolika");
+//Return Type Annotations
+function getFavoriteNumber() {
+    return 260;
+}
+console.log(getFavoriteNumber());
+// No type annotations here, but TypeScript can spot the bug
+const names = ["Alice", "Bob", "Eve"];
+// Contextual typing for function
+names.forEach(function (s) {
+    console.log(s.toUpperCase());
+});
+////////////////////////////Arrow functions////////////////////////
+const getFullName = (name, surname, isPaid = false //default value declaration
+) => {
+    return `${name} ${surname}: ${isPaid ? "paid" : "unpaid"}`;
 };
+console.log(getFullName("Kun-Fagyal", "Zoltán", true));
 console.log(getFullName("Kun-Fagyal", "Zoltán"));
+let getValue = (val) => {
+    return val > 5 ? true : "200 ok";
+};
+console.log(getValue(2));
 let multiply = function (c, d) {
     return c * d;
 };
