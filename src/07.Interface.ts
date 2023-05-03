@@ -1,3 +1,5 @@
+//https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces
+
 //Amikor egy objektum struktúráját egy általánosan felhasználható referenciaként határozom meg akkor a TYPE ALIAS helyett interface-t is használhatunk
 interface Album2 {
   id: number;
@@ -5,7 +7,7 @@ interface Album2 {
   title: string;
 }
 
-//különbség, hogy az INTERFACE bővíthető további kuécs-érték párral a TYPE ALIAS nem
+//különbség, hogy az INTERFACE bővíthető további kulcs-érték párral a TYPE ALIAS nem
 interface Album2 {
   address: string;
 }
@@ -14,7 +16,7 @@ interface Album2 {
 
 //ha ?-et rakok a kulcs után akkor az a kulcs opcionális, nem szükséges megadni
 interface Photo {
-  id: number;
+  readonly _id: number;
   title: string;
   url: string;
   thumbnailUrl: string;
@@ -33,13 +35,25 @@ interface UserInterface {
   age: number;
   address?: string;
   getMessage(): string;
+  getCoupon(couponname: string): number;
 }
 
-const user: UserInterface = {
+interface Admin1
+  extends UserInterface /*ide jöhetnek még további interface-ek vesszővel elválasztva */ {
+  role: "admin" | "ta" | "learner";
+  pin: number;
+}
+
+const user: Admin1 = {
   name: "Zoltan",
   age: 46,
+  role: "admin",
+  pin: 1234,
   getMessage() {
     return `Hello ${this.name}`;
+  },
+  getCoupon: (name) => {
+    return name.length;
   },
 };
 
@@ -48,6 +62,8 @@ console.log(user);
 console.log(user.name);
 
 console.log(user.getMessage());
+
+console.log(user.getCoupon("alma"));
 
 /////////INTERFACE használata CLASS-ban////////////////
 

@@ -66,8 +66,10 @@ name1 = { username: "Hepuka", id: 123 };
 /////////////////////////LITERAL TÍPUS////////////////////////
 
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
-let ertek3: 1 | 42 | 3.2 = 42;
+let ertek3: 1 | 42 | 3.2;
+ertek3 = 42;
 console.log(ertek3);
 
 let texts: "one" | "two" | "three";
 texts = "three";
+//texts = "alma"; HIBA, az alma értéket nem veheti fel a texts változó

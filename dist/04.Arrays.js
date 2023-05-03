@@ -46,9 +46,12 @@ function doStuff(values) {
 //Olyan tömb ami kevés elemet tartalmaz és az elemek a típusaiban eltérnek
 //string csak a 0.indexen, number pedig csak az 1.indexen lehet
 let szemely = ["Zolika", 45];
-let szemely2 = ["Zolika", 45];
-//hivatkozás az elemekre
-szemely2[1]; //visszaadja az 1.indexen lévő értéket
+//ellentéteben az unionnál ott bármilyen sorrendben lehetnek az elemek
+let mixedArray2 = [true, "alma", 2];
+let szemely01 = [100, "Zolika", 45];
+//a TUPLE-nél pontosan lehet tudni, hogy az 1.elem az string, így biztosan meg lehet változtatni, míg az unio esetében nem biztos, hogy az 1. helyen string van
+szemely01[1] = "Hepuka";
+console.log(szemely01);
 //TUPLE-t használata distucturing révén érdemes használni
-const [nev, eletkor] = szemely2;
+const [nev, eletkor] = szemely01;
 console.log(nev, eletkor);
