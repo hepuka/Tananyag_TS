@@ -5,6 +5,10 @@ abstract class TakePhoto2 {
   }
 
   abstract getSepia(): void;
+
+  getRealTime(): number {
+    return 8;
+  }
 }
 
 //HIBÁT JELEZ, mert abstract osztály nem példányosítható, csak örököltethető
@@ -25,4 +29,5 @@ class Instagramm extends TakePhoto2 {
 }
 
 //abstract osztály örököltetve már példányosítható
-//const photo = new Instagramm("Test", "Test");
+const photo = new Instagramm("Test", "Test", 3);
+photo.getRealTime();
