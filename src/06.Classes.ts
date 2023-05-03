@@ -1,7 +1,7 @@
 //PUBLIC alapértelmezett
 //PRIVATE - csak az osztályon belül használható
 //PROTECTED - csak az osztályban látható és az örökölt osztályokban
-//READONLY -   használhatjuk arra, hogy ha egy változót const-ként akarunk használni az osztályban
+//READONLY - használhatjuk arra, hogy ha egy változót const-ként akarunk használni az osztályban
 
 class User {
   // lastName: string;
@@ -29,15 +29,34 @@ class User {
     this.unchangableName = "foo";
   } */
 
+  private deleteAddress() {
+    console.log("Address deleted");
+  }
+
+  //////////////////////////GETTER/////////////////////////////
   getFullName(): string {
     return `${this.firstName} ${this.lastName} ${this.address}`;
+  }
+
+  get getAddress(): string {
+    return this.address;
+  }
+
+  //////////////////////////SETTER/////////////////////////////
+  set setAddress(address: string) {
+    this.address = address;
   }
 }
 
 let user3 = new User("Hepuka", "Kun-Fagyal");
 console.log(user3.getFullName());
-
+console.log(`Address: ${user3.getAddress}`);
 //console.log(user3.firstName); itt már nem lesz látható a firstname mert az osztályban private a láthatósága
+//user3.deleteAddress(); mivel a deleteAddress privát metódus, így ez csak az osztályban használáható, látható
+
+user3.setAddress = "Budapest";
+
+console.log(user3);
 
 class WedDev extends User {
   constructor(public computer: string, firstName: string, lastName: string) {
@@ -45,16 +64,47 @@ class WedDev extends User {
     this.computer = computer;
   }
 
-  public getLoc() {
+  get getLocation() {
     return `My location is ${this.address}`;
   }
 }
 
-const Sara = new WedDev("Mac", "Hepuka", "Kun-Fagyal");
+const Sara = new WedDev("Mac", "Sara", "Kun-Fagyal");
 
 console.log(Sara);
+console.log(Sara.getLocation);
 
-console.log(Sara.getLoc());
+//2.példa
+interface TakePhoto {
+  cameraMode: string;
+  filter: string;
+  burst: number;
+}
+
+interface Story {
+  createStory(): void;
+}
+
+class Instagram implements TakePhoto {
+  constructor(
+    public cameraMode: string,
+    public filter: string,
+    public burst: number
+  ) {}
+}
+
+class YouTube implements TakePhoto, Story {
+  constructor(
+    public cameraMode: string,
+    public filter: string,
+    public burst: number,
+    public short: string
+  ) {}
+
+  createStory(): void {
+    console.log("Story was created!");
+  }
+}
 
 /////////////////////////////////////////////STATIC////////////////////////////////////
 
