@@ -20,9 +20,11 @@ printId(101); //ok
 printId("202"); //ok
 //printId({ myID: 22342 });
 
+////////////////////NARROWING////////////////////////
+//https://www.typescriptlang.org/docs/handbook/2/narrowing.html
+
 //2.példa
 function peldaFuggveny3(bemenet: string | number) {
-  //Narrowing
   //akkor működik a length hogyha a bemenet string, ezt külön meg kell vizsgálni
   if (typeof bemenet === "string") {
     return bemenet.length;
@@ -32,6 +34,65 @@ function peldaFuggveny3(bemenet: string | number) {
 }
 console.log(peldaFuggveny3(3));
 console.log(peldaFuggveny3("alma"));
+
+//IN oprator in NAROOWING
+//https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-in-operator-narrowing
+
+//az IN meghatározza, hogy egy objektum rendelkezik-e a magadott tulajdonsággal
+interface Users1 {
+  name: string;
+  email: string;
+}
+
+interface Admin2 {
+  name: string;
+  email: string;
+  isAdmin: boolean;
+}
+
+function isAdminAccount(account: Users1 | Admin2) {
+  if ("isAdmin" in account) {
+    return `${account.isAdmin} - this is Admin acoount.`;
+  }
+
+  return "This is User account";
+}
+
+const user2222: Users1 = {
+  name: "HEllo",
+  email: "h@h.com",
+};
+console.log(isAdminAccount(user2222));
+
+const user22222: Admin2 = {
+  name: "HEllo",
+  email: "h@h.com",
+  isAdmin: true,
+};
+console.log(isAdminAccount(user22222));
+
+//2.példa
+//az IN meghatározza, hogy egy objektum rendelkezik-e a magadott függvénnyel
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function move(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    return animal.swim();
+  }
+
+  return animal.fly();
+}
+
+const animal1: Fish = {
+  swim: () => "This has swim method",
+};
+console.log(animal1.swim());
+
+const animal2: Bird = {
+  fly: () => "This has fly method",
+};
+console.log(animal2.fly());
 
 //3.példa
 interface User2Interface {
@@ -43,7 +104,6 @@ interface User2Interface {
 let user2: User2Interface | null = null;
 
 //4.példa
-
 type Userss = {
   name: string;
   id: number;

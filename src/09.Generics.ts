@@ -18,6 +18,26 @@ function anotherfunction2<T, U extends number>(valOne: T, valTwo: U): object {
 }
 console.log(anotherfunction2(3, 3));
 
+interface Database {
+  conn: string;
+  username: string;
+  password: string;
+}
+
+function anotherfunction3<T, U extends Database>(valOne: T, valTwo: U) {
+  return {
+    valOne,
+    valTwo,
+  };
+}
+console.log(
+  anotherfunction3("Database", {
+    conn: "Home",
+    username: "Hepuka",
+    password: "aaa",
+  })
+);
+
 //generic egy placeholder amibe bármilyen típusú adatot berakhatunk.
 
 //minden generic adattípust <>-be kell rakni
@@ -190,7 +210,7 @@ const usersArray = [
 console.log(getUserProperty(usersArray, "email"));
 console.log(getUserProperty(usersArray, "username"));
 
-/////////////////////////////////////////////GENERIC IN CLASS/////////////////////////////////////////////////
+//////////////////////GENERIC IN CLASS/////////////////////////////
 
 class StateObject<T> {
   private data: T;
@@ -207,7 +227,6 @@ class StateObject<T> {
     this.data = value;
   }
 }
-
 const store = new StateObject("John");
 console.log(store.state);
 store.state = "Dave";
@@ -216,3 +235,49 @@ store.state = "Dave";
 const myState = new StateObject<(string | number | boolean)[]>([15]);
 myState.state = ["Dave", 42, true];
 console.log(myState.state);
+
+//2.példa
+
+interface Quiz {
+  namesss: string;
+  type: string;
+}
+
+interface Course {
+  name: string;
+  author: string;
+  subject: string;
+}
+
+class Sellable<T> {
+  public cart: T[] = [];
+  addToCart(product: T) {
+    this.cart.push(product);
+  }
+
+  get Cart() {
+    return this.cart;
+  }
+}
+class Sellable2<T extends Quiz> {
+  public cart: T[] = [];
+  addToCart(product: T) {
+    this.cart.push(product);
+  }
+
+  get Cart() {
+    return this.cart;
+  }
+}
+
+const sell = new Sellable();
+sell.addToCart("alma");
+sell.addToCart("dio");
+sell.addToCart("körte");
+sell.addToCart({ name: "alma" });
+console.log(sell.Cart);
+
+const sell2 = new Sellable2();
+
+sell2.addToCart({ namesss: "Hello", type: "question" });
+console.log(sell2.Cart);

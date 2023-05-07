@@ -15,6 +15,17 @@ function anotherfunction2(valOne, valTwo) {
     return { valOne, valTwo };
 }
 console.log(anotherfunction2(3, 3));
+function anotherfunction3(valOne, valTwo) {
+    return {
+        valOne,
+        valTwo,
+    };
+}
+console.log(anotherfunction3("Database", {
+    conn: "Home",
+    username: "Hepuka",
+    password: "aaa",
+}));
 //generic egy placeholder amibe bármilyen típusú adatot berakhatunk.
 //minden generic adattípust <>-be kell rakni
 //itt a T csak objektum típusú lehet
@@ -139,7 +150,7 @@ const usersArray = [
 ];
 console.log(getUserProperty(usersArray, "email"));
 console.log(getUserProperty(usersArray, "username"));
-/////////////////////////////////////////////GENERIC IN CLASS/////////////////////////////////////////////////
+//////////////////////GENERIC IN CLASS/////////////////////////////
 class StateObject {
     constructor(value) {
         this.data = value;
@@ -158,3 +169,34 @@ store.state = "Dave";
 const myState = new StateObject([15]);
 myState.state = ["Dave", 42, true];
 console.log(myState.state);
+class Sellable {
+    constructor() {
+        this.cart = [];
+    }
+    addToCart(product) {
+        this.cart.push(product);
+    }
+    get Cart() {
+        return this.cart;
+    }
+}
+class Sellable2 {
+    constructor() {
+        this.cart = [];
+    }
+    addToCart(product) {
+        this.cart.push(product);
+    }
+    get Cart() {
+        return this.cart;
+    }
+}
+const sell = new Sellable();
+sell.addToCart("alma");
+sell.addToCart("dio");
+sell.addToCart("körte");
+sell.addToCart({ name: "alma" });
+console.log(sell.Cart);
+const sell2 = new Sellable2();
+sell2.addToCart({ namesss: "Hello", type: "question" });
+console.log(sell2.Cart);
