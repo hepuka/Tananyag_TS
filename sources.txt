@@ -1,8 +1,16 @@
+Kódbázis:
 https://www.youtube.com/playlist?list=PL6VA7Z5zO0dpy0uvNllS5-zyNNl5otN5f
 
+
+Mire jó a TypeScript? Érdemes megtanulni?
 https://www.youtube.com/watch?v=szavne5X8No&list=PL2-w4zA7zkIyHjaB848f1qXv2AKf8hHOY&index=1&t=529s
 
 
+TypeScript: a webfejlesztés megmentője - Szupera Zita (AutSoft)
+https://www.youtube.com/watch?v=J24dsFyySXg&list=PL2-w4zA7zkIyHjaB848f1qXv2AKf8hHOY&index=2&t=7s
+
+
+Learn TypeScript – Full Tutorial - freeCodeCamp
 https://www.youtube.com/watch?v=30LWjhZzg50&list=PL2-w4zA7zkIyHjaB848f1qXv2AKf8hHOY&index=10
 
 
