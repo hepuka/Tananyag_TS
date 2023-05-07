@@ -14,51 +14,6 @@ function printId(id) {
 }
 printId(101); //ok
 printId("202"); //ok
-//printId({ myID: 22342 });
-////////////////////NARROWING////////////////////////
-//https://www.typescriptlang.org/docs/handbook/2/narrowing.html
-//2.példa
-function peldaFuggveny3(bemenet) {
-    //akkor működik a length hogyha a bemenet string, ezt külön meg kell vizsgálni
-    if (typeof bemenet === "string") {
-        return bemenet.length;
-    }
-    //kizárásos alapon az else ágban már csak number típus lehet a bemenet
-    return bemenet ** 2;
-}
-console.log(peldaFuggveny3(3));
-console.log(peldaFuggveny3("alma"));
-function isAdminAccount(account) {
-    if ("isAdmin" in account) {
-        return `${account.isAdmin} - this is Admin acoount.`;
-    }
-    return "This is User account";
-}
-const user2222 = {
-    name: "HEllo",
-    email: "h@h.com",
-};
-console.log(isAdminAccount(user2222));
-const user22222 = {
-    name: "HEllo",
-    email: "h@h.com",
-    isAdmin: true,
-};
-console.log(isAdminAccount(user22222));
-function move(animal) {
-    if ("swim" in animal) {
-        return animal.swim();
-    }
-    return animal.fly();
-}
-const animal1 = {
-    swim: () => "This has swim method",
-};
-console.log(animal1.swim());
-const animal2 = {
-    fly: () => "This has fly method",
-};
-console.log(animal2.fly());
 //kezdetben null értéket adunk a változónak, majd később adjuk hozzá az interface-ben meghatározottakat
 let user2 = null;
 let name1 = { name: "Zolika", id: 111 };
