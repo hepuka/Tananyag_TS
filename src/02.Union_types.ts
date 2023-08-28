@@ -5,8 +5,6 @@ let valtozo: string | number = "Hello";
 
 valtozo = 15; //mivel a deklarációban 2 típust adtunk meg, a string értéket módosíthatjuk number értékre
 
-//valtozo:true; itt hibára fut mert vagy string vagy number lehet az érték.
-
 //tömbök deklarálása unióval
 let stringArray: string[];
 let mixedArray: (string | number | boolean)[] = ["alma", true, 2];

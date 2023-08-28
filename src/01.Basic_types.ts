@@ -5,13 +5,8 @@ let car: any;
 
 //////////////////////////Type Inference//////////////////
 let ertek = "teszt";
-//ertek = 2; hibát dob, mert eredetileg string a típusa a változónak
-
 let ertek2 = Math.random();
-//ertek2="Béla"; ez is hibára fut mert a Math.random értéke number
-
 let regex: RegExp = /\w+/g;
-
 let userId: number = 33445;
 
 //////////////////////////////////NEVER//////////////////////////////
