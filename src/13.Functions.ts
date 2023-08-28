@@ -1,5 +1,5 @@
 //Bemenetnek meghatároztuk,hogy az csak string típusú lehet és a kiment csak number típusú
-function peldaFuggveny(bemeneti: string): number {
+function peldaFuggveny(bemeneti: string) {
   return 2;
 }
 
@@ -18,7 +18,7 @@ function greet(name: string) {
 greet("Zolika");
 
 //Return Type Annotations
-function getFavoriteNumber(): number {
+function getFavoriteNumber() {
   return 260;
 }
 console.log(getFavoriteNumber());

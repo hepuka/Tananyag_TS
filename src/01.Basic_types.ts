@@ -7,7 +7,7 @@ let car: any;
 let ertek = "teszt";
 let ertek2 = Math.random();
 let regex: RegExp = /\w+/g;
-let userId: number = 33445;
+let userId = 33445;
 
 //////////////////////////////////NEVER//////////////////////////////
 const createError = (errMsg: string) => {
