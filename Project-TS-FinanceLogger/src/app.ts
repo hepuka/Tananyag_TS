@@ -19,7 +19,8 @@ invoices.push(invOne);
 invoices.push(invTwo);
 
 invoices.map((item) => {
-  console.log(item.client, /*inv.details,*/ item.amount, item.format());
+  console.log(item.client, /*inv.details,*/ item.amount);
+  console.log(item.format());
 });
 
 //types
