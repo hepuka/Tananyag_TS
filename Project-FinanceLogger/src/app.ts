@@ -1,4 +1,3 @@
-// classes
 class Invoice {
   constructor(
     readonly client: string,

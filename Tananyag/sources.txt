@@ -19,3 +19,5 @@ https://www.udemy.com/course/typescript-fundamentals/learn/lecture/9649160#overv
 
 TS Cheat Sheet
 G:\Saját meghajtó\WebDev\Typescript
+
++ lejátszási listák a youtubeon
