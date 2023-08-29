@@ -16,6 +16,7 @@ const createError = (errMsg: string) => {
 
 const infinite = () => {
   let i: number = 1;
+
   while (true) {
     console.log(i);
     i++;
