@@ -15,7 +15,6 @@ const user = {
         return "returned string";
     },
 };
-console.log(user);
 console.log(user.getMessage());
 console.log(user.getTextLength("alma"));
 console.log(user.getData());
@@ -31,4 +30,4 @@ class Guitarist {
     }
 }
 const Page = new Guitarist("Jimmy", "guitar");
-console.log(Page.play("practice"));
+console.log(Page.play("play(s)"));
