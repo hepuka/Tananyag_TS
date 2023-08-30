@@ -5,9 +5,7 @@ let isgood;
 let car;
 //////////////////////////Type Inference//////////////////
 let ertek = "teszt";
-//ertek = 2; hibát dob, mert eredetileg string a típusa a változónak
 let ertek2 = Math.random();
-//ertek2="Béla"; ez is hibára fut mert a Math.random értéke number
 let regex = /\w+/g;
 let userId = 33445;
 //////////////////////////////////NEVER//////////////////////////////
@@ -19,7 +17,7 @@ const infinite = () => {
     while (true) {
         console.log(i);
         i++;
-        if (i > 10)
+        if (i === 11)
             break;
     }
 };

@@ -4,6 +4,8 @@ let isgood: true;
 let car: any;
 
 //////////////////////////Type Inference//////////////////
+
+//TS compiler az értékből levezeti a típust is
 let ertek = "teszt";
 let ertek2 = Math.random();
 let regex: RegExp = /\w+/g;
@@ -21,7 +23,7 @@ const infinite = () => {
     console.log(i);
     i++;
 
-    if (i > 10) break;
+    if (i === 11) break;
   }
 };
 infinite();

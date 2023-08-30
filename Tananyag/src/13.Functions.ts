@@ -3,7 +3,7 @@ function peldaFuggveny(bemeneti: string) {
   return 2;
 }
 
-//ez esetben nem kell kimeneti típust megadni, mert a length alapból numberrel tér vissza
+//ez esetben nem kell kimeneti típust megadni, mert ez redundás infó, a length alapból numberrel tér vissza
 function peldaFuggveny2(bemeneti: string) {
   return bemeneti.length;
 }

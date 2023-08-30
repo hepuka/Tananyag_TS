@@ -3,7 +3,6 @@
 //a változó típusa lehet string is és number is
 let valtozo = "Hello";
 valtozo = 15; //mivel a deklarációban 2 típust adtunk meg, a string értéket módosíthatjuk number értékre
-//valtozo:true; itt hibára fut mert vagy string vagy number lehet az érték.
 //tömbök deklarálása unióval
 let stringArray;
 let mixedArray = ["alma", true, 2];

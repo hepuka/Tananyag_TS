@@ -16,7 +16,6 @@ function printId(id: number | string) {
 }
 printId(101); //ok
 printId("202"); //ok
-//printId({ myID: 22342 });
 
 //2.példa
 interface User2Interface {
