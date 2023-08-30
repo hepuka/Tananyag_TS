@@ -8,14 +8,17 @@ const user = {
     getMessage() {
         return `Hello ${this.name}`;
     },
-    getCoupon: (name) => {
+    getTextLength: (name) => {
         return name.length;
+    },
+    getData: () => {
+        return "returned string";
     },
 };
 console.log(user);
-console.log(user.name);
 console.log(user.getMessage());
-console.log(user.getCoupon("alma"));
+console.log(user.getTextLength("alma"));
+console.log(user.getData());
 class Guitarist {
     constructor(name, instrument) {
         this.name = name;

@@ -35,7 +35,8 @@ interface UserInterface {
   age: number;
   address?: string;
   getMessage(): string;
-  getCoupon(couponname: string): number;
+  getTextLength: (text: string) => number; //ebben a fomában is megadható a függvény
+  getData: () => string; //ebben a fomában is megadható a függvény ha nincs paraméter
 }
 
 interface Admin1
@@ -52,18 +53,18 @@ const user: Admin1 = {
   getMessage() {
     return `Hello ${this.name}`;
   },
-  getCoupon: (name) => {
+  getTextLength: (name) => {
     return name.length;
+  },
+  getData: () => {
+    return "returned string";
   },
 };
 
 console.log(user);
-
-console.log(user.name);
-
 console.log(user.getMessage());
-
-console.log(user.getCoupon("alma"));
+console.log(user.getTextLength("alma"));
+console.log(user.getData());
 
 /////////INTERFACE használata CLASS-ban////////////////
 

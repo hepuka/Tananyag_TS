@@ -10,6 +10,11 @@ interface Task {
   status: StatusEnum;
 }
 
+//interface bővíthető, type nem bővíthető
+interface Task {
+  address?: string;
+}
+
 const firstEnumTask: Task = {
   id: "1234564789",
   status: StatusEnum.NotStarted,
