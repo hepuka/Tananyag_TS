@@ -20,13 +20,6 @@ function getAlbums() {
         return albums.map((item, index) => (Object.assign(Object.assign({}, item), { photos: allPhotos[index] })));
     });
 }
-window.onload = function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        const albums = yield getAlbums();
-        render(albums);
-        console.log(albums);
-    });
-};
 function render(albumok) {
     const container = document.getElementById("root");
     if (!container) {
@@ -57,6 +50,13 @@ function render(albumok) {
     `;
     }
 }
+window.onload = function () {
+    return __awaiter(this, void 0, void 0, function* () {
+        const albums = yield getAlbums();
+        render(albums);
+        console.log(albums);
+    });
+};
 //fetch-eléssel
 /* fetch("http://jsonplaceholder.typicode.com/albums")
   .then((res) => {

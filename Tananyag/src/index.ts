@@ -33,12 +33,6 @@ async function getAlbums() {
   return albums.map((item, index) => ({ ...item, photos: allPhotos[index] }));
 }
 
-window.onload = async function () {
-  const albums = await getAlbums();
-  render(albums);
-  console.log(albums);
-};
-
 function render(albumok: Album4[]) {
   const container = document.getElementById("root");
 
@@ -71,6 +65,12 @@ function render(albumok: Album4[]) {
     `;
   }
 }
+
+window.onload = async function () {
+  const albums = await getAlbums();
+  render(albums);
+  console.log(albums);
+};
 
 //fetch-eléssel
 /* fetch("http://jsonplaceholder.typicode.com/albums")
