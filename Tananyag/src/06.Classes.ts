@@ -4,13 +4,17 @@
 //READONLY - használhatjuk arra, hogy ha egy változót const-ként akarunk használni az osztályban
 
 class User {
-  // lastName: string;
+  //  firstName: string
+  //  lastName: string
+  //  address: string = "Debrecen"
+  //  unchangableName?: string
+
   static readonly maxAge = 50;
 
   // ! jellel lehet jelezni, hogy később fogjuk inicializálni
   idCard!: string;
 
-  //ha a constructor-ban megadjuk a láthatóságot (public address: string) akkor azt a változót a constructor előtt nem kell deklarálni
+  //ha a constructor-ban megadjuk a láthatóságot akkor azt a változót a constructor előtt nem kell deklarálni
   constructor(
     private firstName: string,
     public lastName: string,
@@ -23,19 +27,13 @@ class User {
     this.address = address;
   }
 
-  //nem változtatható meg a változó értéke mert readonly
-
-  /*   changeUnchangableName(): void {
-    this.unchangableName = "foo";
-  } */
-
   private deleteAddress() {
     console.log("Address deleted");
   }
 
   //////////////////////////GETTER/////////////////////////////
   getFullName(): string {
-    return `${this.firstName} ${this.lastName} ${this.address}`;
+    return `${this.firstName} ${this.lastName}, ${this.address}`;
   }
 
   get getAddress(): string {
@@ -48,18 +46,20 @@ class User {
   }
 }
 
-let user3 = new User("Hepuka", "Kun-Fagyal");
+let user3 = new User("Zoltán", "Kun-Fagyal");
+
 console.log(user3.getFullName());
-console.log(`Address: ${user3.getAddress}`);
+console.log(user3.getAddress);
+
 //console.log(user3.firstName); itt már nem lesz látható a firstname mert az osztályban private a láthatósága
 //user3.deleteAddress(); mivel a deleteAddress privát metódus, így ez csak az osztályban használáható, látható
 
 user3.setAddress = "Budapest";
-
 console.log(user3);
 
+//////////////////////////////
 class WedDev extends User {
-  constructor(public computer: string, firstName: string, lastName: string) {
+  constructor(firstName: string, lastName: string, protected computer: string) {
     super(firstName, lastName);
     this.computer = computer;
   }
@@ -67,12 +67,17 @@ class WedDev extends User {
   get getLocation() {
     return `My location is ${this.address}`;
   }
+
+  get getComputer() {
+    return `My computer: ${this.computer}`;
+  }
 }
 
-const Sara = new WedDev("Mac", "Sara", "Kun-Fagyal");
+const Sara = new WedDev("Sara", "Pullman", "MAC");
 
 console.log(Sara);
 console.log(Sara.getLocation);
+console.log(Sara.getComputer);
 
 //2.példa
 interface TakePhoto {
