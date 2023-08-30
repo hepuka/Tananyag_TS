@@ -5,13 +5,16 @@ var StatusEnum;
     StatusEnum["InProgress"] = "inProgress";
     StatusEnum["Done"] = "Done";
 })(StatusEnum || (StatusEnum = {}));
+const firstEnumTask = {
+    id: "1234564789",
+    status: StatusEnum.NotStarted,
+};
+//objektum enum típusú property-ének felülírása
+firstEnumTask.status = StatusEnum.InProgress;
+console.log(firstEnumTask);
 let notStartedStatus = StatusEnum.NotStarted;
-console.log(notStartedStatus); //0, mivel az első helyen áll az enum-ban
 notStartedStatus = StatusEnum.Done; //felülírom a változó értékét
-console.log(notStartedStatus); //2
-console.log(StatusEnum.NotStarted); //0
-console.log(StatusEnum.InProgress); //1
-console.log(StatusEnum.Done); //2
+console.log(notStartedStatus);
 //2.példa
 var SeatChoice;
 (function (SeatChoice) {

@@ -4,22 +4,24 @@ enum StatusEnum {
   Done = "Done",
 }
 
-//ENUM használata INTERFACE-ben
-//status változó típusa enum
+//ENUM használata INTERFACE-ben. status változó típusa enum
 interface Task {
   id: string;
   status: StatusEnum;
 }
 
+const firstEnumTask: Task = {
+  id: "1234564789",
+  status: StatusEnum.NotStarted,
+};
+
+//objektum enum típusú property-ének felülírása
+firstEnumTask.status = StatusEnum.InProgress;
+console.log(firstEnumTask);
+
 let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
-console.log(notStartedStatus); //0, mivel az első helyen áll az enum-ban
-
 notStartedStatus = StatusEnum.Done; //felülírom a változó értékét
-console.log(notStartedStatus); //2
-
-console.log(StatusEnum.NotStarted); //0
-console.log(StatusEnum.InProgress); //1
-console.log(StatusEnum.Done); //2
+console.log(notStartedStatus);
 
 //2.példa
 enum SeatChoice {
