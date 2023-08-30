@@ -29,8 +29,6 @@ const infinite = () => {
 infinite();
 
 ////////////////////////ANY/////////////////////
-//Typescipt3-ban volt bevezetve
-
 let pageNumber: any = "1";
 let numericPageNumber: number = pageNumber as number;
 console.log(typeof numericPageNumber); //string típust ad visza, utánanézni miért??? miért nincs string to number konverzió
