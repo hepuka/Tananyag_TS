@@ -15,6 +15,10 @@ class User {
   idCard!: string;
 
   //ha a constructor-ban megadjuk a láthatóságot akkor azt a változót a constructor előtt nem kell deklarálni
+
+  //private változók csak az eredeti osztályban használható, az örököltben nem
+  //protected változó használható az örökölt osztályban is
+
   constructor(
     private firstName: string,
     public lastName: string,
@@ -114,7 +118,6 @@ class YouTube implements TakePhoto, Story {
 /////////////////////////////////////////////STATIC////////////////////////////////////
 
 //1.példa az előző osztályból
-//console.log(user.maxAge); itt már nem látható mert static
 console.log(User.maxAge); //itt látható mert az osztálynévre hívtam meg és nem a példányosított objektumra (static)
 
 //2.példa

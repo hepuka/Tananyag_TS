@@ -2,21 +2,26 @@
 //https://www.typescriptlang.org/docs/handbook/2/generics.html#using-type-parameters-in-generic-constraints
 
 //T a default neve a generic-nek
+//generic egy placeholder amibe bármilyen típusú adatot berakhatunk. Minden generic adattípust <>-be kell rakni
 
-//példa függvényre
 //bármilyen típusú lehet a 2 bemenet, amit objektumként ad vissza
 function anotherfunction<T, U>(valOne: T, valTwo: U): object {
   return { valOne, valTwo };
 }
+
 console.log(anotherfunction(3, 3));
 console.log(anotherfunction("alma", 3));
 console.log(anotherfunction([1, 2, 3, 4, 5], 3));
 
-//itt már pontosítjuk, hgy az U típus csak number lehet
+//////////////////////////////
+
+//itt pontosítjuk, hogy az U típus csak number lehet
 function anotherfunction2<T, U extends number>(valOne: T, valTwo: U): object {
   return { valOne, valTwo };
 }
 console.log(anotherfunction2(3, 3));
+
+//////////////////////////////
 
 interface Database {
   conn: string;
@@ -24,6 +29,7 @@ interface Database {
   password: string;
 }
 
+//itt már pontosítjuk, hogy az U típus csak Database típusú lehet
 function anotherfunction3<T, U extends Database>(valOne: T, valTwo: U) {
   return {
     valOne,
@@ -38,9 +44,8 @@ console.log(
   })
 );
 
-//generic egy placeholder amibe bármilyen típusú adatot berakhatunk.
+//////////////////////////
 
-//minden generic adattípust <>-be kell rakni
 //itt a T csak objektum típusú lehet
 const addId = <T extends object>(obj: T) => {
   const id = Math.random().toString(16); //hexa számot ad vissza
@@ -49,6 +54,35 @@ const addId = <T extends object>(obj: T) => {
     id,
   };
 };
+
+/////////////////////////
+
+function getSearchProducts<T>(products: T[], index: number): T {
+  return products[index];
+}
+const getMoreSearchProducts = <T>(products: T[], index: number): T => {
+  return products[index];
+};
+
+const expArray: number[] = [1, 2, 3, 4, 5];
+const anotherExpArray: string[] = ["sdf", "jhh", "hjkh"];
+
+console.log(getSearchProducts(expArray, 0));
+console.log(getSearchProducts(anotherExpArray, 0));
+
+const findIndex = <T>(array: T[], searchedItem: T): number => {
+  if (!array.includes(searchedItem)) {
+    return -1;
+  }
+  return array.indexOf(searchedItem);
+};
+
+console.log(findIndex(expArray, 1));
+console.log(findIndex(expArray, 8));
+console.log(findIndex(anotherExpArray, "sdf"));
+console.log(findIndex(anotherExpArray, "sasdadf"));
+
+////////////////////////
 
 //data bármilyen adattípus lehet
 //a lenti példányban egyszer objektum a másiknál string tömb

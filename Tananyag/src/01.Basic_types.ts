@@ -33,6 +33,10 @@ let pageNumber: any = "1";
 let numericPageNumber: number = pageNumber as number;
 console.log(typeof numericPageNumber); //string típust ad visza, utánanézni miért??? miért nincs string to number konverzió
 
+//ANY típusnál bármi lehet a változó típusa, nem ajánlott mivel atípus ebben nem definálható
+let foo: any = 2;
+foo = "str";
+
 ////////////UNKNOWN////////////////
 // unknown - The unknown type represents any value. This is similar to the any type, but is safer because it’s not legal to do anything with an unknown value:
 

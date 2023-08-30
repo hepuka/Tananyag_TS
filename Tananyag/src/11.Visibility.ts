@@ -10,7 +10,3 @@
 const doSomething = (): void => {
   console.log("doSomething");
 };
-
-//ANY típusnál bármi lehet a változó típusa, nem ajánlott mivel atípus ebben nem definálható
-let foo: any = 2;
-foo = "str";

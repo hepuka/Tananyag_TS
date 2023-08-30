@@ -4,14 +4,14 @@ abstract class TakePhoto2 {
     this.filter = filter;
   }
 
-  abstract getSepia(): void;
+  abstract getSepia(): void; //ez a metódus is csak az örökölt példányra alkalmazható
 
   getRealTime(): number {
     return 8;
   }
 }
 
-//HIBÁT JELEZ, mert abstract osztály nem példányosítható, csak örököltethető
+//HIBÁT JELEZ, mert abstract osztály nem példányosítható, csak örököltethető. örököltetve már példányosítható
 //const photo = new TakePhoto("Test", "Test");
 
 class Instagramm extends TakePhoto2 {
@@ -30,4 +30,6 @@ class Instagramm extends TakePhoto2 {
 
 //abstract osztály örököltetve már példányosítható
 const photo = new Instagramm("Test", "Test", 3);
-photo.getRealTime();
+
+photo.getSepia();
+console.log(photo.getRealTime());
