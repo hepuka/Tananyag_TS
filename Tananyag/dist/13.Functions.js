@@ -3,11 +3,19 @@
 function peldaFuggveny(bemeneti) {
     return 2;
 }
-//ez esetben nem kell kimeneti típust megadni, mert a length alapból numberrel tér vissza
+//ez esetben nem kell kimeneti típust megadni, mert ez redundás infó, a length alapból numberrel tér vissza
 function peldaFuggveny2(bemeneti) {
     return bemeneti.length;
 }
 console.log(peldaFuggveny2("Zolika"));
+function peldaFuggveny4(bemeneti) {
+    //NARROWING
+    //pontosítani kell mert a number típusra nem érvényes a length
+    if (typeof bemeneti === "string") {
+        return bemeneti.length;
+    }
+    return bemeneti;
+}
 // Parameter type annotation
 function greet(name) {
     console.log("Hello, " + name.toUpperCase() + "!!");

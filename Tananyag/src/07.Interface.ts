@@ -26,7 +26,7 @@ type Album3 = {
   id: number;
   name: string;
   title: string;
-  photos?: Array<Photo>;
+  photos?: Photo[];
 };
 
 //2.példa

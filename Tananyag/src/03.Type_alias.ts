@@ -7,7 +7,7 @@ type Szamok = 1 | 42 | 3.2;
 //majd a megadott címkét használhatjuk a típusdefinícióban, változóknál és függvényeknél is
 
 let ertek4: Szamok = 42;
-function pelda(bemenet: Szamok): Szamok {
+function pelda(bemenet: Szamok) {
   return 42;
 }
 

@@ -10,7 +10,7 @@ type Album4 = {
   id: number;
   name: string;
   title: string;
-  photos?: Array<Photo>;
+  photos?: Photo[];
 };
 
 //async függvénnyel
@@ -21,7 +21,7 @@ async function getAlbums() {
     return res.json() as Promise<Album4[]>; //típuspontosítás, hogy milyen típusú adatot is várunk a fetch-ben. A TS compiler fordítási időben nem tudhatja, hogy milyen adat fog majd jönni szerver oldalról amikor a kérés kimegy.
   });
 
-  const albums = fetchedAlbums.slice(0, 5); //csak az első 5 albumot kérdezzük le
+  const albums = fetchedAlbums.slice(0, 2); //csak az első 5 albumot kérdezzük le
 
   const promisesOfAllPhotos = albums.map((item) =>
     fetch("http://jsonplaceholder.typicode.com/photos?albumId=" + item.id).then(
@@ -35,11 +35,11 @@ async function getAlbums() {
 
 window.onload = async function () {
   const albums = await getAlbums();
-
+  render(albums);
   console.log(albums);
 };
 
-function render(albumok: Array<Album4>) {
+function render(albumok: Album4[]) {
   const container = document.getElementById("root");
 
   if (!container) {

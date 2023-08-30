@@ -10,6 +10,16 @@ function peldaFuggveny2(bemeneti: string) {
 
 console.log(peldaFuggveny2("Zolika"));
 
+function peldaFuggveny4(bemeneti: string | number) {
+  //NARROWING
+  //pontosítani kell mert a number típusra nem érvényes a length
+  if (typeof bemeneti === "string") {
+    return bemeneti.length;
+  }
+
+  return bemeneti;
+}
+
 // Parameter type annotation
 function greet(name: string) {
   console.log("Hello, " + name.toUpperCase() + "!!");

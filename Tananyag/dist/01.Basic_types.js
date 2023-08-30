@@ -4,6 +4,7 @@ let age;
 let isgood;
 let car;
 //////////////////////////Type Inference//////////////////
+//TS compiler az értékből levezeti a típust is
 let ertek = "teszt";
 let ertek2 = Math.random();
 let regex = /\w+/g;

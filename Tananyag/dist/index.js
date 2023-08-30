@@ -14,7 +14,7 @@ function getAlbums() {
         const fetchedAlbums = yield fetch("http://jsonplaceholder.typicode.com/albums").then((res) => {
             return res.json(); //típuspontosítás, hogy milyen típusú adatot is várunk a fetch-ben. A TS compiler fordítási időben nem tudhatja, hogy milyen adat fog majd jönni szerver oldalról amikor a kérés kimegy.
         });
-        const albums = fetchedAlbums.slice(0, 5); //csak az első 5 albumot kérdezzük le
+        const albums = fetchedAlbums.slice(0, 2); //csak az első 5 albumot kérdezzük le
         const promisesOfAllPhotos = albums.map((item) => fetch("http://jsonplaceholder.typicode.com/photos?albumId=" + item.id).then((res) => res.json()));
         const allPhotos = yield Promise.all(promisesOfAllPhotos);
         return albums.map((item, index) => (Object.assign(Object.assign({}, item), { photos: allPhotos[index] })));
@@ -23,6 +23,7 @@ function getAlbums() {
 window.onload = function () {
     return __awaiter(this, void 0, void 0, function* () {
         const albums = yield getAlbums();
+        render(albums);
         console.log(albums);
     });
 };
