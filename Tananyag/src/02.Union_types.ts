@@ -37,7 +37,7 @@ type Admins = {
   id: number;
 };
 
-let name1: Userss | Admins = { name: "Zolika", id: 111 };
+let name1: Userss | Admins = { name: "Hepuka", id: 123 };
 let username1: Userss | Admins = {
   username: "Zolika",
   id: 2345,
@@ -45,6 +45,8 @@ let username1: Userss | Admins = {
 
 //mivel két típust adtam meg, engedélyezi, hogy az eredetileg Userss-re létrehozott name1 változót átírjam Admins típusra
 name1 = { username: "Hepuka", id: 123 };
+
+const data3: (string | number | boolean)[] = ["1", "2", 3, true];
 
 /////////////////////////LITERAL TÍPUS////////////////////////
 
@@ -55,4 +57,5 @@ console.log(ertek3);
 
 let texts: "one" | "two" | "three";
 texts = "three";
+console.log(texts);
 //texts = "alma"; HIBA, az alma értéket nem veheti fel a texts változó

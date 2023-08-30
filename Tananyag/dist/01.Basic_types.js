@@ -30,7 +30,7 @@ console.log(typeof numericPageNumber); //string típust ad visza, utánanézni m
 ////////////UNKNOWN////////////////
 // unknown - The unknown type represents any value. This is similar to the any type, but is safer because it’s not legal to do anything with an unknown value:
 function f1(a) {
-    a.b(); // OK
+    return a.b(); // OK
 }
 function f2(a) {
     // a.b(); 'a' is of type 'unknown'.

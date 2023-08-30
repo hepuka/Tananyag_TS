@@ -11,7 +11,7 @@ let album = {
 //csak felépítésre figyel, az objektum property-ei csak a megadott típusú értékeket vehetik fel
 let array = [];
 function createUser(name, email, isPaid) {
-    return { name: name, email: email, paid: `${isPaid ? "paid" : "unpaid"}` };
+    return { name: name, email: email, paid: isPaid ? "paid" : "unpaid" };
 }
 array.push(createUser("Zolika", "z@z.com", false));
 array.push(createUser("Zolikaaaaa", "zzzzz@z.com", true));

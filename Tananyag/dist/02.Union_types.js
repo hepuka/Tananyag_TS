@@ -15,13 +15,14 @@ printId(101); //ok
 printId("202"); //ok
 //kezdetben null értéket adunk a változónak, majd később adjuk hozzá az interface-ben meghatározottakat
 let user2 = null;
-let name1 = { name: "Zolika", id: 111 };
+let name1 = { name: "Hepuka", id: 123 };
 let username1 = {
     username: "Zolika",
     id: 2345,
 };
 //mivel két típust adtam meg, engedélyezi, hogy az eredetileg Userss-re létrehozott name1 változót átírjam Admins típusra
 name1 = { username: "Hepuka", id: 123 };
+const data3 = ["1", "2", 3, true];
 /////////////////////////LITERAL TÍPUS////////////////////////
 //a típus defínícióban kell megadni explicite azokat az értékeket amelyeket a változó felvehet
 let ertek3;
@@ -29,4 +30,5 @@ ertek3 = 42;
 console.log(ertek3);
 let texts;
 texts = "three";
+console.log(texts);
 //texts = "alma"; HIBA, az alma értéket nem veheti fel a texts változó

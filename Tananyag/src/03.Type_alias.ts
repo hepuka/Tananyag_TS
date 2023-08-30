@@ -65,3 +65,25 @@ console.log(popularTags);
 
 type MaybepopularTag = PopularTag | null;
 const dragonsTag: MaybepopularTag = "dragon;";
+
+//combination of types
+type cardNumber = {
+  cardNumber: string;
+};
+
+type cardDate = {
+  cardDate: string;
+};
+
+type cardDetails = cardNumber &
+  cardDate & {
+    cvv: number;
+  };
+
+const myCard: cardDetails = {
+  cardNumber: "546465465646",
+  cardDate: "20230523",
+  cvv: 43265646,
+};
+
+console.log(myCard);

@@ -20,17 +20,20 @@ function peldaFuggveny4(bemeneti: string | number) {
   return bemeneti;
 }
 
-// Parameter type annotation
-function greet(name: string) {
-  console.log("Hello, " + name.toUpperCase() + "!!");
-}
+type greetType = (a: string) => void;
 
-greet("Zolika");
+// Parameter type annotation
+let greetResult: greetType = function greet(name) {
+  console.log("Hello, " + name.toUpperCase() + "!!");
+};
+
+greetResult("Zolika");
 
 //Return Type Annotations
 function getFavoriteNumber() {
   return 260;
 }
+
 console.log(getFavoriteNumber());
 
 // No type annotations here, but TypeScript can spot the bug
@@ -49,6 +52,7 @@ const getFullName = (
 ): string => {
   return `${name} ${surname}: ${isPaid ? "paid" : "unpaid"}`;
 };
+
 console.log(getFullName("Kun-Fagyal", "Zoltán", true));
 console.log(getFullName("Kun-Fagyal", "Zoltán"));
 
@@ -89,7 +93,6 @@ const addAll = (a: number, b: number, c?: number): number => {
 
 /////////////////////////////default parameter value//////////////////////
 const sumAll = (a: number, b: number, c: number = 2): number => {
-  //
   return a + b + c;
 };
 

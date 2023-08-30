@@ -10,7 +10,7 @@ let stringArr = ["one", "two", "three"];
 let guitars = ["Strat", "Les Paul", 5150];
 let mixedArr = ["EVH", 1984, true];
 let arr = stringArr.map((item, index) => {
-    return `${index}. item: ${item}`;
+    return `${index}.item: ${item}`;
 });
 console.log(arr.join(", "));
 //ez esetben csak number típusú értékeket tartalmazhat a tömb
@@ -19,7 +19,6 @@ let szamok = [];
 //így is megadhatjuk
 let szamok2 = [];
 szamok2.push(23);
-//szamok2.push("hello"); hibára fut, mert a tömb csak számokat tartalmazhat
 //ez esetben már nem kell a típust megadni a TYPE INFERENCE miatt
 let szamok3 = [15, 12, 34];
 const allUsers = [];
@@ -38,18 +37,20 @@ console.log(MLModels);
 const roArray = ["red", "green", "blue"];
 //2.példa
 function doStuff(values) {
-    const copy = values.slice();
     console.log(`The first value is ${values[0]}`);
     //values.push("hello!"); Property 'push' does not exist on type 'readonly string[]'.
 }
+doStuff(roArray);
 /////////////////////////////TUPLE (értéktöbbes)//////////////////////////
 //Olyan tömb ami kevés elemet tartalmaz és az elemek a típusaiban eltérnek
-//string csak a 0.indexen, number pedig csak az 1.indexen lehet
-let szemely = ["Zolika", 45];
+//string csak a 0.indexen, number pedig csak az 1.indexen lehet ...
+let szemely = ["Zolika", 45, true];
 //ellentéteben az unionnál ott bármilyen sorrendben lehetnek az elemek
 let mixedArray2 = [true, "alma", 2];
 let szemely0 = ["zolika", 46];
 let szemely01 = [100, "Zolika", 45];
+//ez egy hiba a Tuple-ben, engedélyezi a 4 alap array metódus használatát
+szemely01.push(2);
 //a TUPLE-nél pontosan lehet tudni, hogy az 1.elem az string, így biztosan meg lehet változtatni, míg az unio esetében nem biztos, hogy az 1. helyen string van
 szemely01[1] = "Hepuka";
 //TUPLE-t használata distucturing révén érdemes használni

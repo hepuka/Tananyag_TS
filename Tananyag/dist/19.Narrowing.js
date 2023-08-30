@@ -8,7 +8,7 @@ function peldaFuggveny3(bemenet) {
         return bemenet.length;
     }
     //kizárásos alapon az else ágban már csak number típus lehet a bemenet
-    return bemenet ** 2;
+    return Math.pow(bemenet, 2);
 }
 console.log(peldaFuggveny3(3));
 console.log(peldaFuggveny3("alma"));
@@ -75,14 +75,14 @@ const pet1 = {
 console.log(getFood(pet1));
 function getTrueShape(shape) {
     if (shape.kind === "circle") {
-        return Math.PI * shape.radius ** 2;
+        return Math.PI * Math.pow(shape.radius, 2);
     }
     // return shape.side * shape.side;
 }
 function getArea(shape) {
     switch (shape.kind) {
         case "circle":
-            return Math.PI * shape.radius ** 2;
+            return Math.PI * Math.pow(shape.radius, 2);
         case "square":
             return shape.side * shape.side;
         case "rectangle":

@@ -15,7 +15,7 @@ let album = {
 let array: Array<object> = [];
 
 function createUser(name: string, email: string, isPaid: boolean) {
-  return { name: name, email: email, paid: `${isPaid ? "paid" : "unpaid"}` };
+  return { name: name, email: email, paid: isPaid ? "paid" : "unpaid" };
 }
 
 array.push(createUser("Zolika", "z@z.com", false));

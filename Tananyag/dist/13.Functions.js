@@ -17,10 +17,10 @@ function peldaFuggveny4(bemeneti) {
     return bemeneti;
 }
 // Parameter type annotation
-function greet(name) {
+let greetResult = function greet(name) {
     console.log("Hello, " + name.toUpperCase() + "!!");
-}
-greet("Zolika");
+};
+greetResult("Zolika");
 //Return Type Annotations
 function getFavoriteNumber() {
     return 260;
@@ -61,7 +61,6 @@ const addAll = (a, b, c) => {
 };
 /////////////////////////////default parameter value//////////////////////
 const sumAll = (a, b, c = 2) => {
-    //
     return a + b + c;
 };
 console.log(addAll(2, 3, 2));

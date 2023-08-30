@@ -25,3 +25,9 @@ progress = "Befizetve";
 const popularTags = ["dragon", "coffee"];
 console.log(popularTags);
 const dragonsTag = "dragon;";
+const myCard = {
+    cardNumber: "546465465646",
+    cardDate: "20230523",
+    cvv: 43265646,
+};
+console.log(myCard);
