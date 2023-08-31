@@ -13,7 +13,7 @@ function peldaFuggveny3(bemenet: string | number) {
 console.log(peldaFuggveny3(3));
 console.log(peldaFuggveny3("alma"));
 
-//IN oprator in NARROWING
+//in oprator in NARROWING
 //https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-in-operator-narrowing
 
 //az IN meghatározza, hogy egy objektum rendelkezik-e a magadott tulajdonsággal
@@ -50,6 +50,7 @@ const user22222: Admin2 = {
 console.log(isAdminAccount(user22222));
 
 //2.példa
+
 //az IN meghatározza, hogy egy objektum rendelkezik-e a magadott függvénnyel
 type Fish = { swim: () => void };
 type Bird = { fly: () => void };
@@ -86,6 +87,7 @@ function logValue(x: Date | string) {
     console.log(x.toUpperCase());
   }
 }
+
 logValue(date);
 
 //Using type predicates
