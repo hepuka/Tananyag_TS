@@ -38,7 +38,7 @@ let selectBiggerNumber = (n1: number, n2: number) => {
 // Write a constructor with 2 inputs studentId & studentName
 // public method display()  to display student id and name
 
-class Student {
+class StudentOld {
   private studentId: number;
   public studentName: string;
 
@@ -52,5 +52,40 @@ class Student {
   }
 }
 
-let s1 = new Student(101, "Navin");
+let s1 = new StudentOld(101, "Navin");
 s1.display();
+
+//4.feladat
+/*Add a property named schoolName in the child class SchoolStudent
+Add a constructor with 3 parameters in the child class & call the super class constructor
+Override the function display() in the child class, to display all three properties
+*/
+class Student {
+  studentId: number;
+  studentName: string;
+
+  constructor(studentId: number, studentName: string) {
+    this.studentId = studentId;
+    this.studentName = studentName;
+  }
+
+  display() {
+    console.log("Id: " + this.studentId);
+    console.log("Name: " + this.studentName);
+  }
+}
+
+class SchoolStudent extends Student {
+  schoolName:string
+  constructor(studentId: number, studentName: string,schoolName:string) {
+    super(studentId,studentName);
+    this.schoolName=schoolName
+  }
+
+  display(){
+    console.log(`Id: ${this.studentId}, Name: ${this.studentName}, School: ${this.schoolName}`)
+  }
+}
+
+let student1 = new SchoolStudent(101, "Navin", "ABC");
+student1.display();
