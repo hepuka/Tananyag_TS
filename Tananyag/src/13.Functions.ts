@@ -117,11 +117,16 @@ const numberOrString = (value: number | string) => {
 const buildNames = (firstName: string, ...anotherNames: string[]) => {
   return `${firstName} ${anotherNames.join(" ")}`;
 };
+
 const buildNamesWithArrayParam = (
   firstName: string,
   anotherNames: string[]
 ) => {
   return `${firstName} ${anotherNames.join(" ")}`;
+};
+
+const buildAllNames = (...names: string[]) => {
+  return `${names.join(" ")}`;
 };
 
 const personOne = buildNames("steve", "john", "doe", "paul", "james");
@@ -131,6 +136,8 @@ const personOneWithArray = buildNamesWithArrayParam("steve", [
   "paul",
   "james",
 ]);
+const personAll = buildNames("steve", "john", "doe", "paul", "james");
 
 console.log(personOne);
 console.log(personOneWithArray);
+console.log(personAll);
