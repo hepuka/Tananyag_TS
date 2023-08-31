@@ -144,3 +144,14 @@ const personAll = buildNames("steve", "john", "doe", "paul", "james");
 console.log(personOne);
 console.log(personOneWithArray);
 console.log(personAll);
+
+//callback
+function takeAction(n1: number, n2: number, fun: any) {
+  return fun(n1, n2);
+}
+
+const add = (n1: number, n2: number) => {
+  return n1 + n2;
+};
+
+console.log(takeAction(1, 3, add));
