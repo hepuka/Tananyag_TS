@@ -14,8 +14,8 @@ let mixedArray: (string | number | boolean)[] = ["alma", true, 2];
 function printId(id: number | string) {
   console.log("Your ID is: " + id);
 }
-printId(101); //ok
-printId("202"); //ok
+printId(101);
+printId("202");
 
 //2.példa
 interface User2Interface {
@@ -38,6 +38,7 @@ type Admins = {
 };
 
 let name1: Userss | Admins = { name: "Hepuka", id: 123 };
+console.log(name1)
 let username1: Userss | Admins = {
   username: "Zolika",
   id: 2345,

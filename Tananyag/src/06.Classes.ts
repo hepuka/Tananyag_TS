@@ -17,15 +17,15 @@ class User {
 
   //ha a constructor-ban megadjuk a láthatóságot akkor azt a változót a constructor előtt nem kell deklarálni
   constructor(
-    private firstName: string,
-    public lastName: string,
-    protected address: string = "Debrecen",
-    readonly unchangableName?: string
+      private firstName: string,
+      public lastName: string,
+      protected _address: string = "Debrecen",
+      readonly unchangableName?: string
   ) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.unchangableName = firstName;
-    this.address = address;
+    this._address = _address;
   }
 
   private deleteAddress() {
@@ -37,25 +37,25 @@ class User {
     return `${this.firstName} ${this.lastName}, ${this.address}`;
   }
 
-  get getAddress(): string {
-    return this.address;
+  get address(): string {
+    return this._address;
   }
 
-  //////////////////////////SETTER/////////////////////////////
-  set setAddress(address: string) {
-    this.address = address;
+   //////////////////////////SETTER/////////////////////////////
+  set address(address: string) {
+    this._address = address;
   }
 }
 
 let user3 = new User("Zoltán", "Kun-Fagyal");
 
 console.log(user3.getFullName());
-console.log(user3.getAddress);
+console.log(user3.address);
+user3.address = "Bp";
 
 //console.log(user3.firstName); itt már nem lesz látható a firstname mert az osztályban private a láthatósága
 //user3.deleteAddress(); mivel a deleteAddress privát metódus, így ez csak az osztályban használáható, látható
 
-user3.setAddress = "Budapest";
 console.log(user3);
 
 //////////////////////////////
