@@ -39,7 +39,7 @@ let selectBiggerNumber = (n1: number, n2: number) => {
 // public method display()  to display student id and name
 
 class Student {
-  public studentId: number;
+  private studentId: number;
   public studentName: string;
 
   constructor(studentId: number, studentName: string) {
