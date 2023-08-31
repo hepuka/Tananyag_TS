@@ -10,15 +10,12 @@ class User {
   //  unchangableName?: string
 
   static readonly maxAge = 50;
-
-  // ! jellel lehet jelezni, hogy később fogjuk inicializálni
-  idCard!: string;
-
-  //ha a constructor-ban megadjuk a láthatóságot akkor azt a változót a constructor előtt nem kell deklarálni
+  idCard!: string; // ! jellel lehet jelezni, hogy később fogjuk inicializálni
 
   //private változók csak az eredeti osztályban használható, az örököltben nem
   //protected változó használható az örökölt osztályban is
 
+  //ha a constructor-ban megadjuk a láthatóságot akkor azt a változót a constructor előtt nem kell deklarálni
   constructor(
     private firstName: string,
     public lastName: string,
