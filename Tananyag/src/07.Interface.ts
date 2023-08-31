@@ -12,7 +12,7 @@ interface Album2 {
   address: string;
 }
 
-//////////////////////INTERFACE használható TYPE ALIAS-ban is mint a kulcs értéke/////////////////////
+//////////////////////INTERFACE használható TYPE ALIAS-ban is mint típus/////////////////////
 
 //ha ?-et rakok a kulcs után akkor az a kulcs opcionális, nem szükséges megadni
 interface Photo {
@@ -79,11 +79,12 @@ class Guitarist implements Musician {
     this.instrument = instrument;
   }
 
+  //kötelezeő implementálni
   play(action: string) {
     return `${this.name} ${action} on the ${this.instrument}`;
   }
 }
 
-const Page = new Guitarist("Jimmy", "guitar");
+const page = new Guitarist("Jimmy", "guitar");
 
-console.log(Page.play("play(s)"));
+console.log(page.play("play(s)"));

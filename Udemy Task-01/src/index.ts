@@ -60,7 +60,7 @@ s1.display();
 Add a constructor with 3 parameters in the child class & call the super class constructor
 Override the function display() in the child class, to display all three properties
 */
-class Student {
+class Student1 {
   studentId: number;
   studentName: string;
 
@@ -75,7 +75,7 @@ class Student {
   }
 }
 
-class SchoolStudent extends Student {
+class SchoolStudent extends Student1 {
   schoolName:string
   constructor(studentId: number, studentName: string,schoolName:string) {
     super(studentId,studentName);
@@ -89,3 +89,25 @@ class SchoolStudent extends Student {
 
 let student1 = new SchoolStudent(101, "Navin", "ABC");
 student1.display();
+
+
+//5.feladat
+//Complete the implementation of the SchoolStandards interface in class Student
+interface SchoolStandards {
+  studentId: number;
+  studentName: string;
+
+  lunchBreak: () => void;
+}
+
+class Student implements SchoolStandards {
+  studentId: number;
+  studentName: string;
+  constructor(studentId:number,studentName:string) {
+    this.studentId=studentId
+    this.studentName=studentName
+  }
+  lunchBreak()  {
+    console.log("Lunch break")
+  };
+}
