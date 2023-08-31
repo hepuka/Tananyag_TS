@@ -31,3 +31,26 @@ let selectBiggerNumber = (n1: number, n2: number) => {
 
   return n2;
 };
+
+//3.feladat
+
+// public properties studentId & studentName
+// Write a constructor with 2 inputs studentId & studentName
+// public method display()  to display student id and name
+
+class Student {
+  public studentId: number;
+  public studentName: string;
+
+  constructor(studentId: number, studentName: string) {
+    this.studentId = studentId;
+    this.studentName = studentName;
+  }
+
+  public display(): void {
+    console.log(`Id: ${this.studentId}, Name: ${this.studentName} `);
+  }
+}
+
+let s1 = new Student(101, "Navin");
+s1.display();
