@@ -108,8 +108,11 @@ const total = (a: number, ...nums: number[]): number => {
 console.log(total(1, 2, 3));
 
 const numberOrString = (value: number | string) => {
-  if (typeof value === "string") return "string";
-  if (typeof value === "number") return "number";
+  if (typeof value === "string") {
+    return "string";
+  } else if (typeof value === "number") {
+    return "number";
+  }
 };
 
 //rest parameter
