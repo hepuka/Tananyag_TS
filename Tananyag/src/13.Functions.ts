@@ -111,3 +111,26 @@ const numberOrString = (value: number | string) => {
   if (typeof value === "string") return "string";
   if (typeof value === "number") return "number";
 };
+
+//rest parameter
+
+const buildNames = (firstName: string, ...anotherNames: string[]) => {
+  return `${firstName} ${anotherNames.join(" ")}`;
+};
+const buildNamesWithArrayParam = (
+  firstName: string,
+  anotherNames: string[]
+) => {
+  return `${firstName} ${anotherNames.join(" ")}`;
+};
+
+const personOne = buildNames("steve", "john", "doe", "paul", "james");
+const personOneWithArray = buildNamesWithArrayParam("steve", [
+  "john",
+  "doe",
+  "paul",
+  "james",
+]);
+
+console.log(personOne);
+console.log(personOneWithArray);
