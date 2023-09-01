@@ -11,6 +11,11 @@ function pelda(bemenet: Szamok) {
   return 42;
 }
 
+//type bővítése (ellentétben az interface-el, ahol az extends kulcsszót kell használni)
+type Employee = {name:string};
+type EmployeeV2 = Employee & {city:string}
+const empl1:EmployeeV2 = {name:"John", city:"NY"}
+
 //1.példa
 type Users = {
   readonly name: string;

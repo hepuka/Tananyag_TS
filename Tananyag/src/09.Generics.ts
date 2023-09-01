@@ -3,6 +3,12 @@
 
 //T a default neve a generic-nek
 //generic egy placeholder amibe bármilyen típusú adatot berakhatunk. Minden generic adattípust <>-be kell rakni
+const display = <T>(value:T) => {
+  console.log(value)
+}
+display(2);
+display("user")
+display(true)
 
 //bármilyen típusú lehet a 2 bemenet, amit objektumként ad vissza
 function anotherfunction<T, U>(valOne: T, valTwo: U): object {

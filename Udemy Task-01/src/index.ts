@@ -93,14 +93,14 @@ student1.display();
 
 //5.feladat
 //Complete the implementation of the SchoolStandards interface in class Student
-interface SchoolStandards {
+interface SchoolStandards1 {
   studentId: number;
   studentName: string;
 
   lunchBreak: () => void;
 }
 
-class Student implements SchoolStandards {
+class Student implements SchoolStandards1 {
   studentId: number;
   studentName: string;
   constructor(studentId:number,studentName:string) {
@@ -111,3 +111,20 @@ class Student implements SchoolStandards {
     console.log("Lunch break")
   };
 }
+
+//6.feladat
+//Add the appropriate utility types to match the object creations.
+interface SchoolStandards {
+  studentId: number;
+  studentName: string;
+}
+
+let ob1:Partial<SchoolStandards>;
+ob1 = {
+  studentId: 101,
+};
+
+let ob2: Pick<SchoolStandards, "studentName">;
+ob2 = {
+  studentName: "Navin",
+};

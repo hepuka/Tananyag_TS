@@ -112,7 +112,7 @@ type AllPossibleGrades = "Dave" | "John" | null | undefined;
 type NamesOnly = NonNullable<AllPossibleGrades>;
 const nonNullableVariable:NamesOnly = "John"
 
-////////////////////// ReturnType//////////////////////
+////////////////////// Return  Type//////////////////////
 //type newAssign = { title: string, points: number }
 
 const createNewAssign = (title: string, points: number) => {
