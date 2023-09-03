@@ -1,6 +1,0 @@
-tsc --init
-npm init -y
-npm i live-server
-
-1.terminal npm start
-2.terminal src könyvtárba belépni, majd tsc -w
