@@ -91,16 +91,17 @@ console.log(page.play("play(s)"));
 
 // Interface - Declaration Merging
 
+//2 különböző, de azonos nevú interface-ek alkalmazása objektumok létrehozásakor
+//mivel ez esetben az első interface ki van egészítve további property-kel
+
 interface BankAccount {
   accountNumber: number;
   accountName: string;
-
   debit: (amount: number) => void;
 }
 
 interface BankAccount {
   accountBalance: number;
-
   credit: (amount: number) => void;
 }
 
@@ -112,7 +113,6 @@ let acc01: BankAccount = {
   debit: (amount: number) => {
     console.log("Debit successfull");
   },
-
   credit: (amount: number) => {
     console.log("Debit successfull");
   },

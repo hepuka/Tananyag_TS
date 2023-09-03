@@ -33,3 +33,7 @@ https://www.udemy.com/course/typescript-complete-guide/learn/lecture/39250090#ov
 
 Declaration Merging
 https://www.udemy.com/course/typescript-complete-guide/learn/lecture/39250164#overview
+
+
+Definitely Typed
+https://www.udemy.com/course/typescript-complete-guide/learn/lecture/39250184#overview

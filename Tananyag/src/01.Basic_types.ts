@@ -65,3 +65,74 @@ function safeParse(s: string): unknown {
 function fail(msg: string): never {
   throw new Error(msg);
 }
+
+// any vs unknown
+
+// let val: any;
+// val = 123;
+
+// let result1 = val + 1;
+// let result2 = val.toUpperCase();
+// console.log(result2);
+
+let val1: unknown;
+val1 = "navin";
+
+if (typeof val1 === "number") {
+  let result1 = val1 + 1;
+  console.log(result1);
+} else if (typeof val1 === "string") {
+  let result1 = val1.toUpperCase();
+  console.log(result1);
+}
+
+// undefined VS null
+
+function display1(value: string) {
+  if (typeof value === "string") {
+    console.log("User provided value");
+    console.log(value);
+  } else if (typeof value === "undefined") {
+    console.log("User forgot to give value may be");
+  } else if (value === null) {
+    console.log("User don't want to display anything");
+  }
+}
+
+let value: any;
+value = null;
+display1(value);
+
+// for..of vs. for..in
+
+let arrr = [10, 20, 30];
+
+//közvetlenül az értékeket kapjuk meg
+for (let value of arrr) {
+  console.log(value);
+}
+
+//index-eken keresztül érjük el az értékeket
+for (let index in arrr) {
+  console.log(arrr[index]);
+}
+
+// hash # prefix class members
+
+class BankAccount33 {
+  accountName: string = "N/A";
+  #accountBalance: number = 0;
+
+  credit(amount: number) {
+    this.#accountBalance += amount;
+  }
+
+  getBal() {
+    return this.#accountBalance;
+  }
+}
+
+let acc133 = new BankAccount33();
+console.log(acc133.getBal());
+acc133.credit(100);
+console.log(acc133.getBal());
