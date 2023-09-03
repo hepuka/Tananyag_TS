@@ -76,20 +76,21 @@ class Student1 {
 }
 
 class SchoolStudent extends Student1 {
-  schoolName:string
-  constructor(studentId: number, studentName: string,schoolName:string) {
-    super(studentId,studentName);
-    this.schoolName=schoolName
+  schoolName: string;
+  constructor(studentId: number, studentName: string, schoolName: string) {
+    super(studentId, studentName);
+    this.schoolName = schoolName;
   }
 
-  display(){
-    console.log(`Id: ${this.studentId}, Name: ${this.studentName}, School: ${this.schoolName}`)
+  display() {
+    console.log(
+      `Id: ${this.studentId}, Name: ${this.studentName}, School: ${this.schoolName}`
+    );
   }
 }
 
 let student1 = new SchoolStudent(101, "Navin", "ABC");
 student1.display();
-
 
 //5.feladat
 //Complete the implementation of the SchoolStandards interface in class Student
@@ -103,13 +104,13 @@ interface SchoolStandards1 {
 class Student implements SchoolStandards1 {
   studentId: number;
   studentName: string;
-  constructor(studentId:number,studentName:string) {
-    this.studentId=studentId
-    this.studentName=studentName
+  constructor(studentId: number, studentName: string) {
+    this.studentId = studentId;
+    this.studentName = studentName;
   }
-  lunchBreak()  {
-    console.log("Lunch break")
-  };
+  lunchBreak() {
+    console.log("Lunch break");
+  }
 }
 
 //6.feladat
@@ -119,7 +120,7 @@ interface SchoolStandards {
   studentName: string;
 }
 
-let ob1:Partial<SchoolStandards>;
+let ob1: Partial<SchoolStandards>;
 ob1 = {
   studentId: 101,
 };
@@ -128,3 +129,26 @@ let ob2: Pick<SchoolStandards, "studentName">;
 ob2 = {
   studentName: "Navin",
 };
+
+//7.feladat
+// Declare generic array with name arr
+// Write a constructor to initialize a generic array
+// Write getLength() to return the length of generic array
+
+class ArrayData<T> {
+  arr: T[];
+
+  constructor(array: T[]) {
+    this.arr = array;
+  }
+
+  getLength(): number {
+    return this.arr.length;
+  }
+}
+
+let data1 = new ArrayData([1, 2, 3]);
+console.log(data1.getLength());
+
+let data2 = new ArrayData(["Navin", "Pravin"]);
+console.log(data2.getLength());

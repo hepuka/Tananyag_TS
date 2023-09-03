@@ -88,3 +88,32 @@ class Guitarist implements Musician {
 const page = new Guitarist("Jimmy", "guitar");
 
 console.log(page.play("play(s)"));
+
+// Interface - Declaration Merging
+
+interface BankAccount {
+  accountNumber: number;
+  accountName: string;
+
+  debit: (amount: number) => void;
+}
+
+interface BankAccount {
+  accountBalance: number;
+
+  credit: (amount: number) => void;
+}
+
+let acc01: BankAccount = {
+  accountNumber: 101,
+  accountName: "Navin;",
+  accountBalance: 1000,
+
+  debit: (amount: number) => {
+    console.log("Debit successfull");
+  },
+
+  credit: (amount: number) => {
+    console.log("Debit successfull");
+  },
+};

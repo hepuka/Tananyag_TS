@@ -21,3 +21,15 @@ TS Cheat Sheet
 G:\Saját meghajtó\WebDev\Typescript
 
 + lejátszási listák a youtubeon
+
+
+TS JSON Config file beállítás:
+https://www.udemy.com/course/typescript-complete-guide/learn/lecture/39199626#overview
+
+
+Decorators
+https://www.udemy.com/course/typescript-complete-guide/learn/lecture/39250090#overview
+
+
+Declaration Merging
+https://www.udemy.com/course/typescript-complete-guide/learn/lecture/39250164#overview
